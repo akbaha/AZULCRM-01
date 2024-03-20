@@ -1,4 +1,4 @@
-@wip
+
 Feature: Users should be able to login
   User Story:
   As a user, I should be able to login.

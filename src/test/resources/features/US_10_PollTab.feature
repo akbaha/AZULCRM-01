@@ -27,7 +27,7 @@ Feature: User should be able to create a poll by clicking on Poll tab in the Act
 	#*{color:#de350b}AC2{color}* Verify that the user can create a poll by adding questions and multiple answers.
 	#
 	# 
-	@B32G19-252 @wip
+	@B32G19-252
 	Scenario Outline: Verify that the user can create a poll by adding questions and multiple answers.
 		Given the user logged in as "<user type>"
 		Then user should land on the homepage
