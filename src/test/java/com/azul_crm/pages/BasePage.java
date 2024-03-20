@@ -14,10 +14,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public abstract class BasePage {
+public class BasePage {
 
-    @FindBy(css = "span.title-level-1")
+    @FindBy(xpath = "//div[@id='feed-add-post-form-tab']/span") //done
     public List<WebElement> menuOptions;
+
+    @FindBy(css = "span[id='feed-add-post-form-tab-message']")
+    public WebElement messageModule;
+
+    @FindBy(css = "span[id='feed-add-post-form-tab-tasks']")
+    public WebElement taskModule;
+
+    @FindBy(css = "span[id='feed-add-post-form-tab-calendar']")
+    public WebElement eventModule;
+    @FindBy(css = "span[id='feed-add-post-form-tab-vote']")
+    public WebElement pollModule;
+
+    @FindBy(css = "span[id='feed-add-post-form-link-more']")
+    public WebElement moreModule;
+    @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
+    public WebElement lastCreatedPost;
 
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
