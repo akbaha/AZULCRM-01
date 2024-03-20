@@ -115,4 +115,6 @@ public class LoginStepDefs {
     public void userShouldLandOnTheHomepage() {
         BrowserUtils.verifyTitleContains("Portal");
     }
+
+
 }

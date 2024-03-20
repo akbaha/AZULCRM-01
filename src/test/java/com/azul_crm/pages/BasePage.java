@@ -57,6 +57,9 @@ public class BasePage {
 
 
 
+    @FindBy(xpath = "//li[@data-id='menu_company']")
+    public WebElement employeesMenu;
+
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
