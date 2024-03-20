@@ -14,10 +14,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public abstract class BasePage {
+public class BasePage {
 
-    @FindBy(css = "span.title-level-1")
-    public List<WebElement> menuOptions;
+    @FindBy (id = "user-name")
+    public WebElement profilename;
+
+    @FindBy(xpath = "//a[contains(@href, 'yes')]")
+    public WebElement logoutButton;
+
+    @FindBy(css = "#menu-popup-user-menu")
+    public WebElement optionsUnderProfileName;
+
 
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
@@ -26,14 +33,10 @@ public abstract class BasePage {
     @FindBy(css = "h1[class='oro-subtitle']")
     public WebElement pageSubTitle;
 
-    @FindBy(css = "#user-menu > a")
-    public WebElement userName;
 
-    @FindBy(linkText = "Logout")
-    public WebElement logOutLink;
 
-    @FindBy(linkText = "My User")
-    public WebElement myUser;
+
+
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
