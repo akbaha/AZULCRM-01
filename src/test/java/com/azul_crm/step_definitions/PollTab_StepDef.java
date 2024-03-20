@@ -2,6 +2,7 @@ package com.azul_crm.step_definitions;
 
 import com.azul_crm.pages.BasePage;
 import com.azul_crm.pages.PollModulePage;
+import com.azul_crm.utilities.BrowserUtils;
 import com.azul_crm.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,6 +18,7 @@ public class PollTab_StepDef extends PollModulePage {
 
     @Then("user should see in the delivery box {string} by default")
     public void user_should_see_in_the_delivery_box_by_default(String string) {
+        BrowserUtils.waitForVisibility(deliveryBox.get(0),3);
         for (WebElement each : deliveryBox) {
             if (each.getText().contains(string)) {
                 Assert.assertTrue(true);
@@ -44,8 +46,9 @@ public class PollTab_StepDef extends PollModulePage {
         sendButton.click();
     }
 
-    @Then("user can see created Poll with Message title {string}")
+    @Then("user can see created post with Message title {string}")
     public void user_can_see_created_poll(String expectedTitle) {
+        BrowserUtils.waitFor(2);
         Assert.assertEquals(expectedTitle, lastCreatedPost.getText());
     }
 
