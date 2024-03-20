@@ -10,12 +10,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 
 public class BasePage {
 
+    @FindBy (id = "user-name")
+    public WebElement profilename;
+
+    @FindBy(xpath = "//a[contains(@href, 'yes')]")
+    public WebElement logoutButton;
+
+    @FindBy(css = "#menu-popup-user-menu")
+    public WebElement optionsUnderProfileNa
+      
     @FindBy(xpath = "//div[@id='feed-add-post-form-tab']/span") //done
     public List<WebElement> menuOptions;
 
@@ -27,11 +35,13 @@ public class BasePage {
 
     @FindBy(css = "span[id='feed-add-post-form-tab-calendar']")
     public WebElement eventModule;
+  
     @FindBy(css = "span[id='feed-add-post-form-tab-vote']")
     public WebElement pollModule;
 
     @FindBy(css = "span[id='feed-add-post-form-link-more']")
     public WebElement moreModule;
+  
     @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
     public WebElement lastCreatedPost;
 
@@ -42,14 +52,10 @@ public class BasePage {
     @FindBy(css = "h1[class='oro-subtitle']")
     public WebElement pageSubTitle;
 
-    @FindBy(css = "#user-menu > a")
-    public WebElement userName;
 
-    @FindBy(linkText = "Logout")
-    public WebElement logOutLink;
 
-    @FindBy(linkText = "My User")
-    public WebElement myUser;
+
+
 
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
