@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json"
         },
         features = "src/test/resources/features",
-        glue = "com/project_name/step_definitions",
+        glue = "com/azul_crm/step_definitions",
         dryRun = true,
         tags = "@wip",
         publish = true //generating a report with public link
