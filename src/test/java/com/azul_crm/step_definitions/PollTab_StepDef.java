@@ -47,7 +47,7 @@ public class PollTab_StepDef extends PollModulePage {
         sendButton.click();
     }
 
-    @Then("user can see created Poll with Message title {string}")
+    @Then("user can see created post with Message title {string}")
     public void user_can_see_created_poll(String expectedTitle) {
         BrowserUtils.waitFor(2);
         Assert.assertEquals(expectedTitle, lastCreatedPost.getText());

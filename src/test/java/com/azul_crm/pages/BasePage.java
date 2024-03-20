@@ -22,7 +22,7 @@ public class BasePage {
     public WebElement logoutButton;
 
     @FindBy(css = "#menu-popup-user-menu")
-    public WebElement optionsUnderProfileNa
+    public WebElement optionsUnderProfileName;
       
     @FindBy(xpath = "//div[@id='feed-add-post-form-tab']/span") //done
     public List<WebElement> menuOptions;
