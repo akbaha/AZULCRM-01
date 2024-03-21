@@ -1,13 +1,12 @@
+@B32G19-268
+Feature:  Default
 
-Feature: Users should be able to login
-  User Story:
-  As a user, I should be able to login.
-  Users: HR user, Marketing user, Helpdesk user
-
-  Background: User is already in the log in page
+  @B32G19-282
+  Background:
+    #@B32G19-282
     Given the user is on the login page
 
-  @login
+  @B32G19-263
   Scenario Outline: Verify login with different user types
     When the user logged in as "<user type>"
    # Given the user logged in with username as "<username>" and password as "<password>"
@@ -19,7 +18,7 @@ Feature: Users should be able to login
       | Marketing user |
       | HR user        |
 
-  @invalidLogin
+  @B32G19-264
   Scenario Outline: Login with invalid credential
     When user login with invalid "<invalidUsername>" and valid "<password>"
     When user login with valid "<username>" and invalid "<invalidPassword>"
@@ -33,14 +32,16 @@ Feature: Users should be able to login
       | marketing1@cydeo.com | lalala          | hrcydeo.com       | UserUser |
 
 
-  #@loginWithEmptyFields
+  #@B32G19-265
   #Scenario: Verify that the "Please fill out this field" error message is displayed if the password or username is empty.
+   # When user leave the password or username fields empty
+    #Then user should see "Please fill out this field" error message
 
-
+  @B32G19-266
   Scenario: Verify that the "Remember me on this computer" link exists and is clickable on the login page.
     Then Remember me on this computer link exists and is clickable
 
-
+  @B32G19-267
   Scenario: Verify that the password is in bullet signs by default.
     When user enter password in password area
     Then user should see the password in bullet signs
