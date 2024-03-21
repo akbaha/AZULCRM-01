@@ -18,7 +18,8 @@ public class CompanyStructurePage {
 
     @FindBy (xpath ="(//span[.='Add department'])[1]" )
     public WebElement addDepartment;
-
+@FindBy(xpath = "//span[@class='main-buttons-item-text-title']")
+    public WebElement modulesList;
 
 
 }
