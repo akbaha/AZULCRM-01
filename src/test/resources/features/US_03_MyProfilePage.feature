@@ -19,6 +19,7 @@ Feature: Default
       | Marketing user |
       | HR user        |
 
+
   @B32G19-280
   Scenario Outline: Verify that the email under the General tab is the same as the user’s account.
     Given the user logged in as "<user type>"

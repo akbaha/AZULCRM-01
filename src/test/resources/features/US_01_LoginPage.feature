@@ -1,9 +1,11 @@
 @B32G19-268
-Feature:  Default
+Feature: Users should be able to login
+  User Story:
+  As a user, I should be able to login.
+  Users: HR user, Marketing user, Helpdesk user
 
-  @B32G19-282
-  Background:
-    #@B32G19-282
+
+  Background: User is already in the log in page
     Given the user is on the login page
 
   @B32G19-263
@@ -31,11 +33,9 @@ Feature:  Default
       | hr1@cydeo.com        | 012345          | mrktng@cydeo.com  | UserUser |
       | marketing1@cydeo.com | lalala          | hrcydeo.com       | UserUser |
 
-
-  #@B32G19-265
+#@B32G19-265
+  #@loginWithEmptyFields
   #Scenario: Verify that the "Please fill out this field" error message is displayed if the password or username is empty.
-   # When user leave the password or username fields empty
-    #Then user should see "Please fill out this field" error message
 
   @B32G19-266
   Scenario: Verify that the "Remember me on this computer" link exists and is clickable on the login page.
