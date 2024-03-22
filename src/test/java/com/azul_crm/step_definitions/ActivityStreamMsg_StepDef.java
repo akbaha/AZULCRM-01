@@ -100,4 +100,28 @@ public class ActivityStreamMsg_StepDef {
 
     }
 
+    @And("assert the result image")
+    public void assertTheResultImage() {
+
+        String expectedMsg =  activityStreamMsgPage.imgupload.getAttribute("src");
+
+        Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+        // Driver.getDriver().switchTo().frame(0);
+        BrowserUtils.sleep(2);
+
+         String actualMsg =  activityStreamMsgPage.insertimag.getAttribute("src");
+
+        Driver.getDriver().switchTo().defaultContent();
+
+
+        String expectedSrc = expectedMsg.replaceAll("&width=\\d+&height=\\d+", "");
+        String actualSrc = actualMsg.replaceAll("&width=\\d+&height=\\d+", "");
+
+
+        Assert.assertEquals(expectedSrc,actualSrc);
+
+
+        //update
+
+    }
 }

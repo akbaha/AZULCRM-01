@@ -54,4 +54,13 @@ public class ActivityStreamMsgPage {
         @FindBy(xpath = "//span[contains(@id, 'bxid')]")
         public WebElement actualMsg;
 
+
+        @FindBy(xpath ="//img[@class='files-preview']")
+        public WebElement imgupload;
+
+        @FindBy(xpath = "//img[starts-with(@id, 'bxid') and not(contains(@id, ' '))]")
+        public WebElement insertimag;
+
+        // update
+
 }
