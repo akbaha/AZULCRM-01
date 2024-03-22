@@ -61,4 +61,6 @@ public class ActivityStreamMsgPage {
         @FindBy(xpath = "//img[starts-with(@id, 'bxid') and not(contains(@id, ' '))]")
         public WebElement insertimag;
 
+        // update
+
 }

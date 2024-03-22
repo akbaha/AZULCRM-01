@@ -16,6 +16,7 @@ Feature: File and Picture Upload as Messages
       | Helpdesk user  |
       #| Marketing user |
       #| HR user        |
+      #| cccc  |
 
 
   Scenario Outline: User uploads files and pictures
